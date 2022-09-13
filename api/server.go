@@ -31,7 +31,7 @@ func Server(cxt context.Context, db *bbolt.DB, t *http.Transport) int {
 	mux.GET("/bilibili.flv", bilivideoGet(t))
 
 	s := http.Server{
-		Addr:              "127.0.0.1:" + strconv.FormatInt(p, 10),
+		Addr:              "127.0.0.1:32335" +,
 		Handler:           mux,
 		ReadTimeout:       10 * time.Second,
 		WriteTimeout:      60 * time.Second,
