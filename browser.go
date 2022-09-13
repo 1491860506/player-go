@@ -46,14 +46,14 @@ func main() {
 	mux.Handle("/assets/", AddPrefix("frontend/dist", http.FileServer(http.FS(assets))))
 
 	server := &http.Server{
-		Addr:              "127.0.0.1:" + port,
+		Addr:              "127.0.0.1:9732",
 		ReadTimeout:       10 * time.Second,
 		WriteTimeout:      20 * time.Second,
 		ReadHeaderTimeout: 5 * time.Second,
 		Handler:           mux,
 	}
 	fmt.Printf("http://127.0.0.1:%v", port)
-	browser.OpenURL("http://127.0.0.1:" + port)
+	browser.OpenURL("http://127.0.0.1:9732")
 	log.Println(server.ListenAndServe())
 }
 
@@ -62,7 +62,7 @@ var (
 )
 
 func init() {
-	flag.StringVar(&port, "port", "8080", "port")
+	flag.StringVar(&port, "port", "9732", "port")
 	flag.Parse()
 }
 
