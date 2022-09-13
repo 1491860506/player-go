@@ -16,7 +16,7 @@ import (
 func Server(cxt context.Context, t *http.Transport) int {
 	p := utils.GetProt()
 	s := http.Server{
-		Addr:              "127.0.0.1:32335",
+		Addr:               "127.0.0.1:" + strconv.FormatInt(p, 10),
 		Handler:           handler(t),
 		ReadTimeout:       10 * time.Second,
 		WriteTimeout:      60 * time.Second,
