@@ -22,7 +22,7 @@ jobs:
 
     - name: Build dependencies
       run: |
-        git clone https://github.com/191860506/player
+        git clone https://github.com/1491860506/player
         cd player
         npm install -g pnpm
         pnpm install
